@@ -19,11 +19,11 @@ def play_game():
         print_board(board)
         
         if is_win(board, player):
-            print(f"Win found in row {row+1}")
+            print_board(board)
             print(f"Player {player} is the winner")
             break
         elif is_full(board):
-            print(f"Win found in row {row+1}")
+            print_board(board)
             print("The board is full")
             break
         
