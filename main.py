@@ -1,6 +1,6 @@
-from board import *
-from game_rules import *
-from player import *
+import board as b
+import rules as r
+import player as p
 
 def play_game():
     """
@@ -14,16 +14,16 @@ def play_game():
     
     # Run loop until win condition is found
     while True:
-        board = player_choice(board, player)
+        board = p.player_choice(board, player)
         
-        print_board(board)
+        b.print_board(board)
         
-        if is_win(board, player):
-            print_board(board)
-            print(f"Player {player} is the winner")
+        if r.is_win(board, player):
+            b.print_board(board)
+            print(f"Player {player} is the winner!")
             break
-        elif is_full(board):
-            print_board(board)
+        elif r.is_full(board):
+            b.print_board(board)
             print("The board is full")
             break
         
